@@ -1,0 +1,54 @@
+import React, { useState } from 'react';
+import axios from 'axios';
+import { MonitorPlay, Loader2, Download, FileUp } from 'lucide-react';
+import { addToHistory } from '../utils/history';
+
+const PptToPdf = () => {
+    const [file, setFile] = useState(null);
+    const [loading, setLoading] = useState(false);
+
+    const handleConvert = async () => {
+        if (!file) return alert("Please select a PowerPoint file.");
+        setLoading(true);
+        const formData = new FormData();
+        formData.append('ppt', file);
+
+        try {
+            const res = await axios.post('http://localhost:5000/ppt-to-pdf', formData, { responseType: 'blob' });
+            const url = window.URL.createObjectURL(new Blob([res.data]));
+            const link = document.createElement('a');
+            link.href = url;
+            link.setAttribute('download', 'converted_presentation.pdf');
+            document.body.appendChild(link);
+            link.click();
+            addToHistory("PPT to PDF", file.name);
+        } catch (err) {
+             alert("PPT to PDF conversion failed. Make sure LibreOffice is installed.");
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    return (
+        <div className="min-h-screen bg-gray-50 flex flex-col items-center py-20 px-4">
+            <div className="bg-white p-10 rounded-2xl shadow-lg border max-w-lg w-full text-center">
+                <MonitorPlay size={64} className="text-orange-600 mx-auto mb-6" />
+                <h1 className="text-3xl font-bold mb-4">PPT to PDF</h1>
+                <p className="text-gray-500 mb-8">Convert your PowerPoint presentations into high-quality PDFs.</p>
+                
+                <div className="border-2 border-dashed border-gray-200 rounded-xl p-8 mb-6 bg-gray-50 hover:bg-gray-100 transition-colors relative">
+                    <input type="file" accept=".pptx,.ppt" onChange={(e) => setFile(e.target.files[0])} className="absolute inset-0 w-full h-full opacity-0 cursor-pointer" />
+                    <FileUp size={32} className="mx-auto text-gray-400 mb-2" />
+                    <p className="text-sm text-gray-600">{file ? file.name : "Click to select PPT file"}</p>
+                </div>
+
+                <button onClick={handleConvert} disabled={loading || !file} className="w-full bg-orange-600 hover:bg-orange-700 text-white font-bold py-3 px-6 rounded-lg flex items-center justify-center transition-all disabled:opacity-50 shadow-md">
+                    {loading ? <Loader2 className="animate-spin mr-2" /> : <Download className="mr-2" />}
+                    {loading ? "Converting..." : "Convert to PDF"}
+                </button>
+            </div>
+        </div>
+    );
+};
+
+export default PptToPdf;
