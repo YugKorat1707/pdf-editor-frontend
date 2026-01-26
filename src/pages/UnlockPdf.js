@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { LockOpen, Loader2, FileUp, AlertCircle, CheckCircle2, ShieldOff } from "lucide-react";
+//import { LockOpen, Loader2, FileUp, AlertCircle, CheckCircle2, ShieldOff } from "lucide-react";
 import { addToHistory } from "../utils/history"; 
 
 export default function UnlockPdf() {

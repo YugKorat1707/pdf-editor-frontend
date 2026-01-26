@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Table, Loader2, Download, FileType } from 'lucide-react';
+// ❌ remove Download
+import { FileType, Loader2, Table } from "lucide-react";
+
+//import { Table, Loader2, Download, FileType } from 'lucide-react';
 import { addToHistory } from '../utils/history';
 
 const PdfToExcel = () => {

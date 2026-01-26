@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
+//import { Lock, Loader2, FileUp, AlertCircle, CheckCircle2, ShieldCheck } from "lucide-react";
 import { Lock, Loader2, FileUp, AlertCircle, CheckCircle2, ShieldCheck } from "lucide-react";
+
 import { addToHistory } from "../utils/history"; 
 
 export default function ProtectPdf() {
