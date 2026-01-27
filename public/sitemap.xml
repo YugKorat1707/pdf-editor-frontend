@@ -6,15 +6,55 @@
   </url>
 
   <url>
-    <loc>https://pdfeditor.live/merge</loc>
+    <loc>https://pdfeditor.live/login</loc>
   </url>
 
   <url>
-    <loc>https://pdfeditor.live/split</loc>
+    <loc>https://pdfeditor.live/signup</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/merge-pdf</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/split-pdf</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/compress-pdf</loc>
   </url>
 
   <url>
     <loc>https://pdfeditor.live/word-to-pdf</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/excel-to-pdf</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/powerpoint-to-pdf</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/pdf-to-word</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/pdf-to-excel</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/privacy-policy</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/terms</loc>
+  </url>
+
+  <url>
+    <loc>https://pdfeditor.live/contact</loc>
   </url>
 
 </urlset>
