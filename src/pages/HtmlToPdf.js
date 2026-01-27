@@ -9,7 +9,7 @@ export default function HtmlToPdf() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/html-to-pdf",
+        "https://api.pdfeditor.live/html-to-pdf",
         { html },
         { responseType: "blob" }
       );

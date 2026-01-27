@@ -24,7 +24,7 @@ export default function UnlockPdf() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/unlock-pdf",
+        "https://api.pdfeditor.live/unlock-pdf",
         formData,
         { responseType: "blob" }
       );

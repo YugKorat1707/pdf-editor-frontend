@@ -15,7 +15,7 @@ const ImagesToPdf = () => {
     Array.from(files).forEach(f => formData.append('images', f));
 
     try {
-      const res = await axios.post('http://localhost:5000/images-to-pdf', formData, { responseType: 'blob' });
+      const res = await axios.post('https://api.pdfeditor.live/images-to-pdf', formData, { responseType: 'blob' });
       const url = window.URL.createObjectURL(new Blob([res.data]));
       const a = document.createElement('a');
       a.href = url;

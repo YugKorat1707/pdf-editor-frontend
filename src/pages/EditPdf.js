@@ -22,7 +22,7 @@ export default function EditPdf() {
 
   const [editText, setEditText] = useState("");
 
-  const API = "http://localhost:5000";
+  const API = "https://api.pdfeditor.live";
 
   // ---------- DOWNLOAD HANDLER ----------
   const downloadResult = async (url, formData) => {

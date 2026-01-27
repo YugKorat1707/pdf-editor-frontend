@@ -15,7 +15,7 @@ export default function CropPdf() {
     form.append("height", cropBox.height);
 
     const res = await axios.post(
-      "http://localhost:5000/crop-pdf",
+      "https://api.pdfeditor.live/crop-pdf",
       form,
       { responseType: "blob" }
     );

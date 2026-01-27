@@ -25,7 +25,7 @@ export default function ProtectPdf() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/protect-pdf",
+        "https://api.pdfeditor.live/protect-pdf",
         formData,
         { responseType: "blob" }
       );
