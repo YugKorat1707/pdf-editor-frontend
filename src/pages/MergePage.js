@@ -21,7 +21,7 @@ const MergePage = () => {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/merge",
+        "https://api.pdfeditor.live/merge",
         formData,
         { responseType: "blob" }
       );
@@ -53,7 +53,7 @@ const MergePage = () => {
           name="keywords"
           content="merge pdf, combine pdf, pdf merger online, join pdf files"
         />
-        <link rel="canonical" href="https://yourdomain.com/merge-pdf" />
+        <link rel="canonical" href="https://pdfeditor.live/merge-pdf" />
       </Helmet>
 
       <div className="min-h-screen bg-gray-50 flex flex-col items-center py-20 px-4">

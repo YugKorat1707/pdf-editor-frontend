@@ -19,7 +19,7 @@ const SplitPage = () => {
     formData.append('pdf', file);
 
     try {
-      const response = await axios.post('http://localhost:5000/split', formData, {
+      const response = await axios.post('https://api.pdfeditor.live/split', formData, {
         responseType: 'blob',
       });
 

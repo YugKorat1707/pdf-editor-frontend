@@ -18,7 +18,7 @@ export default function WordToPdf() {
 
     try {
       const res = await axios.post(
-        "https://pdf-editor-backend-dq3y.onrender.com/office-to-pdf",
+        "https://api.pdfeditor.live/office-to-pdf",
         formData,
         { responseType: "blob" }
       );

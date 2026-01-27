@@ -14,9 +14,10 @@ const PdfToWord = () => {
     setLoading(true);
     const formData = new FormData();
     formData.append('pdf', file);
+//axios.post("https://your-backend-domain.onrender.com/...")https://your-backend-domain.onrender.com
 
     try {
-      const res = await axios.post('http://localhost:5000/pdf-to-word', formData, { 
+      const res = await axios.post('https://api.pdfeditor.live/pdf-to-word', formData, { 
         responseType: 'blob' 
       });
       

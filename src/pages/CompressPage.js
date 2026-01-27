@@ -18,7 +18,7 @@ const CompressPage = () => {
     formData.append('pdf', file);
 
     try {
-      const response = await axios.post('http://localhost:5000/compress', formData, {
+      const response = await axios.post('https://api.pdfeditor.live/compress', formData, {
         responseType: 'blob',
       });
 
