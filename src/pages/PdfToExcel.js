@@ -18,7 +18,7 @@ const PdfToExcel = () => {
 
         try {
            
-            const res = await axios.post('https://api.pdfeditor.live/pdf-to-excel', formData, { 
+            const res = await axios.post('https://api.pdfeditor.live/office-to-pdf', formData, { 
                 responseType: 'blob' 
             });
             const url = window.URL.createObjectURL(new Blob([res.data]));
