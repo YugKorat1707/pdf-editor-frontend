@@ -10,7 +10,7 @@ const ExcelToPdf = () => {
         if (!file) return alert("Please select an Excel file.");
         setLoading(true);
         const formData = new FormData();
-        formData.append('excel', file);
+        formData.append('file', file);
 
         try {
             const res = await axios.post('https://api.pdfeditor.live/office-to-pdf'

@@ -33,7 +33,7 @@ const handleConvert = async () => {
 
   setLoading(true);
   const formData = new FormData();
-  formData.append("pdf", file); // FIXED
+  formData.append("file", file); // FIXED
 
   try {
     const res = await axios.post(

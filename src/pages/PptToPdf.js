@@ -11,7 +11,7 @@ const PptToPdf = () => {
         if (!file) return alert("Please select a PowerPoint file.");
         setLoading(true);
         const formData = new FormData();
-        formData.append('ppt', file);
+        formData.append('file', file);
 
         try {
             const res = await axios.post('https://api.pdfeditor.live/office-to-pdf', formData, { responseType: 'blob' });
