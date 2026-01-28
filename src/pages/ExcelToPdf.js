@@ -13,7 +13,7 @@ const ExcelToPdf = () => {
         formData.append('file', file);
 
         try {
-            const res = await axios.post('https://api.pdfeditor.live/office-to-pdf'
+            const res = await axios.post('https://api.pdfeditor.live/excel-to-pdf'
 , formData, { responseType: 'blob' });
             const url = window.URL.createObjectURL(new Blob([res.data]));
             const link = document.createElement('a');
