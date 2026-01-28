@@ -14,7 +14,7 @@ const PdfToPpt = () => {
         formData.append('pdf', file);
 
         try {
-            const res = await axios.post('https://api.pdfeditor.live/office-to-pdf', formData, { responseType: 'blob' });
+            const res = await axios.post('https://api.pdfeditor.live/pdf-to-ppt', formData, { responseType: 'blob' });
             const url = window.URL.createObjectURL(new Blob([res.data]));
             const link = document.createElement('a');
             link.href = url;
