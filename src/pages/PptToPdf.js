@@ -14,7 +14,7 @@ const PptToPdf = () => {
         formData.append('file', file);
 
         try {
-            const res = await axios.post('https://api.pdfeditor.live/office-to-pdf', formData, { responseType: 'blob' });
+            const res = await axios.post('https://api.pdfeditor.live/office-to-pdf', formData);
             const url = window.URL.createObjectURL(new Blob([res.data]));
             const link = document.createElement('a');
             link.href = url;
