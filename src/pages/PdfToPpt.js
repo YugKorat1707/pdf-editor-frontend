@@ -7,27 +7,50 @@ const PdfToPpt = () => {
     const [file, setFile] = useState(null);
     const [loading, setLoading] = useState(false);
 
-    const handleConvert = async () => {
-        if (!file) return alert("Please select a PDF file.");
-        setLoading(true);
-        const formData = new FormData();
-        formData.append('pdf', file);
+    // const handleConvert = async () => {
+    //     if (!file) return alert("Please select a PDF file.");
+    //     setLoading(true);
+    //     const formData = new FormData();
+    //     formData.append('file', file);
 
-        try {
-            const res = await axios.post('https://api.pdfeditor.live/pdf-to-ppt', formData, { responseType: 'blob' });
-            const url = window.URL.createObjectURL(new Blob([res.data]));
-            const link = document.createElement('a');
-            link.href = url;
-            link.setAttribute('download', 'converted_slides.pptx');
-            document.body.appendChild(link);
-            link.click();
-            addToHistory("PDF to PPT", file.name);
-        } catch (err) {
-            alert("Conversion failed. Ensure backend 'pptxgenjs' is installed.");
-        } finally {
-            setLoading(false);
-        }
-    };
+    //     try {
+    //         const res = await axios.post('https://api.pdfeditor.live/pdf-to-ppt', formData);
+    //         const url = window.URL.createObjectURL(new Blob([res.data]));
+    //         const link = document.createElement('a');
+    //         link.href = url;
+    //         link.setAttribute('download', 'converted_slides.pptx');
+    //         document.body.appendChild(link);
+    //         link.click();
+    //         addToHistory("PDF to PPT", file.name);
+    //     } catch (err) {
+    //         alert("Conversion failed. Please try again later.");
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
+const handleConvert = async () => {
+  if (!file) return alert("Please select a PDF file.");
+
+  setLoading(true);
+  const formData = new FormData();
+  formData.append("file", file); // FIXED
+
+  try {
+    const res = await axios.post(
+      "https://api.pdfeditor.live/pdf-to-ppt",
+      formData
+    );
+
+    window.location.href = res.data.url; // FIXED
+    addToHistory("PDF to PPT", file.name);
+
+  } catch (err) {
+    console.error(err);
+    alert("Conversion failed. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
 
     return (
         <div className="min-h-screen bg-gray-50 flex flex-col items-center py-20 px-4">
